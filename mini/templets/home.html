@@ -1,0 +1,83 @@
+ {% extends 'base.html' %} 
+ {% include 'list_courses.html' %} 
+ {% load static %}
+ 
+ {% comment %} {% block extra_head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home_background.css' %}"> 
+{% endblock %}  {% endcomment %}
+ {% block scroll_style %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/scroll.css' %}">
+ {% endblock %}
+ 
+{% block list_courses_style %}
+ <link rel="stylesheet" type="text/css" href="{% static 'css/list_courses.css' %}">
+  {% endblock %}
+
+ 
+{% block scroll %}
+<div class="galleryContainer">
+    <div class="slideShowContainer">
+        <div id="playPause" onclick="playPauseSlides()"></div>
+        <div onclick="plusSlides(-1)" class="nextPrevBtn leftArrow"><span class="arrow arrowLeft"></span></div>
+        <div onclick="plusSlides(1)" class="nextPrevBtn rightArrow"><span class="arrow arrowRight"></span></div>
+        <div class="captionTextHolder"><p class="captionText slideTextFromTop"></p></div>
+        <div class="imageHolder">
+            <img src="{% static 'images/img_1.jpg'%}">              
+            {% comment %} 1366X768 {% endcomment %}
+            <p class="captionText">Caption Text-01</p>
+        </div>
+        <div class="imageHolder">
+            <img src="{% static 'images/img_2.jpg'%}"">
+            <p class="captionText">Caption Text-02</p>
+        </div>
+        <div class="imageHolder">
+            <img src="{% static 'images/img_3.jpg'%}">
+            <p class="captionText">Caption Text-03</p>
+        </div>
+        <div class="imageHolder">
+            <img src="{% static 'images/img_4.jpg'%}">
+            <p class="captionText">Caption Text-04</p>
+        </div>
+    </div>
+    <div id="dotsContainer"></div>
+</div>
+<script src="{% static 'js/myScript.js'%}"></script>
+
+
+{% endblock %}
+
+{% block list_courses %}
+
+
+<div class="container">
+{% for course in courses %}
+	<div class="box">
+		<div class="content">
+			<h2 id ='num'></h2>
+			<h3> {{course.title}}</h3>
+			<p>
+            Rating : {{course.rating}}
+            </p>
+			<a href="">Go to Course</a>
+		</div>
+	</div>
+    {% endfor %}
+</div>
+
+{% endblock  %}
+
+{% comment %} {% block script %}
+<script>
+    	n=6;
+		let container=document.querySelector(".container");
+        let boxval = document.getElementById("num");
+        var count = 1;
+        let refele =container.children[0];
+        for(i=1;i<=n;i++){
+        	let newele=refele.cloneNode(true);
+        	container.appendChild(newele);
+        	boxval.innerHTML=count;
+        	count++;
+            }
+</script>
+{% endblock  %} {% endcomment %}

@@ -1,0 +1,39 @@
+body {
+    background-color: white;
+    margin: 0%;
+}
+
+h1 {
+    color: red;
+    font-size: 2.1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    position: relative;
+    font-size-adjust: none;
+}
+
+body {
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-image: url('https://images.pexels.com/photos/1144176/pexels-photo-1144176.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    animation: slider 50s infinite;
+}
+
+@keyframes slider {
+    0% {
+        background-image: url('https://images.pexels.com/photos/1144176/pexels-photo-1144176.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    }
+    20% {
+        background-image: url('https://i.pinimg.com/originals/63/6f/73/636f73855b5c55af54bcfad3e5e93024.jpg');
+    }
+    40% {
+        background-image: url('https://images.pexels.com/photos/1393996/pexels-photo-1393996.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    }
+    60% {
+        background-image: url('https://www.setaswall.com/wp-content/uploads/2017/03/Waterfall-Landscape-4K-Ultra-HD-Wallpaper-3840x2160.jpg');
+    }
+    80% {
+        background-image: url('https://wallpaperplay.com/walls/full/e/b/9/87876.jpg');
+    }
+}
