@@ -10,17 +10,7 @@ from .models import Courses
 
 def home(request):
 
-    crs1 = Courses()
-    crs1.title = 'Django project'
-    crs1.rating = 5.0
-
-    crs2 = Courses()
-    crs2.title = 'React project'
-    crs2.rating = 4.5
-
-    crs3 = Courses()
-    crs3.title = 'Angular project'
-    crs3.rating = 4.0
-    crs_list=[crs1,crs2,crs3]
-    return render(request,'home.html',{'courses':crs_list})
+    crs_list=Courses.objects.all()[::-1]
+    cre=crs_list[:4]
+    return render(request,'home.html',{'courses':cre})
 

@@ -1,0 +1,68 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cyborg/bootstrap.min.css">
+</head>
+<body style="background-color: #2B3E50;color: white">
+
+
+    <div class="topnav">
+  <a  href="/" style="font-style: oblique;">Course4u</a>          
+  {% if user.is_authenticated %}   
+     {% comment %} <h4> Welcome:{{user.username}}</h4> {% endcomment %}
+     <a href="#" style="float:right">{{user.username}}</a>
+      <a href="{% url 'logout'%}" style="float:right">Logout</a>
+      <a href="{% url 'contribution'%}">Contribute</a>
+  {% else %}
+  <a href="login">Login</a>
+  {% endif %}
+  <a href=""  style="float:right">Contact</a>
+  
+    </div>
+
+
+
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 text-center">
+                    <h1>About</h1>
+                    <div class="container">
+                        <h3 class="text-primary">Names</h3>
+                        <p><b>VEDANTHI KARTHIK</b></p>
+                        <p><b>SUHAS KJ</b></p>
+                        <p><b>PRUTHVI PATEL</b></p>
+                        <h3 class="text-primary">College & Sem</h3>
+                        <p><b>K.S. Institute of Technology</b></p>
+                        <p><b>7th Semester</b></p>
+                    </div>
+                    <h3 class="text-success">Contact Us</h3>
+                    <div style="display: flex; margin:0px;">
+                    <a href="/">vedanthikarthik@gmail.com</a> 
+                    <span style="color:red;font-size: 2rem;"> | </span> 
+                    <a href="/">pruthvipatel.ask98@gmail.com</a>
+                    <span style="color:red;font-size: 2rem;"> | </span>
+                     <a href="/"> kjsuhas@gmail.com</a>
+                    </div>
+                    
+                </div>
+                <div class="col-sm-5">
+                    <div class="wrapper">
+                        <img src="{% static 'images/img.jpg'%}" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>

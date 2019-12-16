@@ -1,13 +1,16 @@
-.container {
+.contain {
     position: relative;
-    width: 90%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     grid-template-rows: auto;
     grid-gap: 10px 50px;
+    margin: 0px;
+    padding: 0px;
+    ;
 }
 
-.container .box {
+.contain .box {
     position: relative;
     height: 300px;
     background: #060c21;
@@ -18,7 +21,7 @@
     margin: 25px;
 }
 
-.container .box:before {
+.contain .box:before {
     content: "";
     position: absolute;
     left: -2px;
@@ -30,23 +33,23 @@
     z-index: -1;
 }
 
-.container .box:nth-child(1):before {
+.contain .box:nth-child(1):before {
     background: linear-gradient(315deg, #ff0057, #e64a19);
 }
 
-.container .box:nth-child(2):before {
+.contain .box:nth-child(2):before {
     background: linear-gradient(315deg, #89ff00, #00bcd4);
 }
 
-.container .box:nth-child(3):before {
+.contain .box:nth-child(3):before {
     background: linear-gradient(315deg, #e91e63, #5d02ff);
 }
 
-.container .box:nth-child(4):before {
+.contain .box:nth-child(4):before {
     background: linear-gradient(315deg, #ff0000, #ffc107)
 }
 
-.container .box:after {
+.contain .box:after {
     content: "";
     position: absolute;
     top: 0px;
@@ -93,22 +96,22 @@
     font-size: 16px;
 }
 
-.container .box:nth-child(1) p:hover {
+.contain .box:nth-child(1) p:hover {
     background: repeating-linear-gradient(to right, #ff0057, #e64a19);
     padding: 10px 10px 0 20px;
 }
 
-.container .box:nth-child(2) p:hover {
+.contain .box:nth-child(2) p:hover {
     background: repeating-linear-gradient(to right, #89ff00, #00bcd4);
     padding: 10px 10px 0 20px;
 }
 
-.container .box:nth-child(3) p:hover {
+.contain .box:nth-child(3) p:hover {
     background: repeating-linear-gradient(to right, #e91e63, #5d02ff);
     padding: 10px 10px 0 20px;
 }
 
-.container .box:nth-child(4) p:hover {
+.contain .box:nth-child(4) p:hover {
     background: repeating-linear-gradient(to right, red, yellow);
     padding: 10px 10px 0 20px;
 }

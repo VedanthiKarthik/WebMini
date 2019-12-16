@@ -14,13 +14,21 @@
       {% block list_courses_style %} {% endblock %}
 </head>
 
-<body>
+<body >
     
     <div class="topnav">
-  <a  href="#home" >Home</a>          
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-  <input type="text" placeholder="Search...">
+  <a  href="#home" style="font-style: oblique;">Course4u</a>      
+  {% if user.is_authenticated %}   
+     {% comment %} <h4> Welcome:{{user.username}}</h4> {% endcomment %}
+     <a href="#" style="float:right">{{user.username}}</a>
+      <a href="registration/logout" style="float:right">Logout</a>
+      <a href="contribution/contribution">Contribute</a>
+  {% else %}
+  <a href="registration/login">Login</a>
+  {% endif %}
+  <a href= "contribution/about"  style="float:right">Contact</a>
+  
+  {% comment %} <input type="text" placeholder="Search..."> {% endcomment %}
     </div>
     
     {% comment %} {% block content %} {% endblock %} {% endcomment %}

@@ -1,0 +1,48 @@
+ {% load static %}
+
+ <html>
+ <body>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/scroll.css' %}">
+ <link rel="stylesheet" type="text/css" href="{% static 'css/list_courses.css' %}">
+ <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+ <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/superhero/bootstrap.min.css">
+</head>
+ <div class="topnav">
+  <a  href="/" style="font-style: oblique;">Course4u</a>         
+  {% if user.is_authenticated %}   
+     {% comment %} <h4> Welcome:{{user.username}}</h4> {% endcomment %}
+     <a href="#" style="float:right">{{user.username}}</a>
+      <a href="{% url 'logout'%}" style="float:right">Logout</a>
+      <a href="contribution">Contribute</a>
+  {% else %}
+  <a href="/login">Login</a>
+  {% endif %}
+  <a href="about"  style="float:right">Contact</a>
+  
+    </div>
+
+<div class="contain">
+
+{% for course in courses %}
+	<div class="box">
+		<div class="content">
+			<h2 id ='num'></h2>
+			<h6> {{course.title}}</h6>
+			<p>
+            Rating : {{course.rating}}<br>
+            {% comment %} Price : {{course.price}} {% endcomment %}
+            </p>
+            {% if user.is_authenticated %}
+			<a href={{course.course_urls}}>Details</a>
+            {% else %}
+            <a href="registration/login">Details</a>
+            {% endif %}
+		</div>
+	</div>
+    {% endfor %}
+    
+</div>
+</body>
+</html>
